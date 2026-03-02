@@ -2,7 +2,7 @@
 __pycache__/
 *.pyc
 .env
-generated_iac/infra/.terraform/
+generated_iac/**/infra/.terraform/
 *.tfstate
 *.tfstate.backup
 conversation.log

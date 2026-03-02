@@ -19,9 +19,9 @@ services:
       - OPENAI_API_BASE=${OPENAI_API_BASE:-http://host.docker.internal:1234/v1}
       - LLM_MODEL=${LLM_MODEL:-qwen/qwen2.5-coder-14b}
     volumes:
-      - ./generated_iac/infra:/app/infra
-      - ./generated_iac/config:/app/config
-      - ./docs:/app/docs
+      - ./generated_iac/${LLM_DIR}/infra:/app/infra
+      - ./generated_iac/${LLM_DIR}/config:/app/config
+      - ./generated_iac/${LLM_DIR}/docs:/app/docs
     depends_on:
       - redis-broker
     networks:
@@ -46,10 +46,10 @@ services:
       - SSH_USER=${SSH_USER:-root}
       - BOOTSTRAP_SSH_KEY=/tmp/app/bootstrap_id_rsa
     volumes:
-      - ./generated_iac/infra:/app/infra
-      - ./generated_iac/config:/app/config
+      - ./generated_iac/${LLM_DIR}/infra:/app/infra
+      - ./generated_iac/${LLM_DIR}/config:/app/config
       - ./tmp:/tmp/app
-      - ./docs:/app/docs
+      - ./generated_iac/${LLM_DIR}/docs:/app/docs
     depends_on:
       - redis-broker
     networks:
@@ -67,10 +67,10 @@ services:
     depends_on:
       - redis-broker
     volumes:
-      - ./generated_iac/infra:/app/infra
-      - ./generated_iac/config:/app/config
+      - ./generated_iac/${LLM_DIR}/infra:/app/infra
+      - ./generated_iac/${LLM_DIR}/config:/app/config
       - ./tmp:/tmp/app
-      - ./docs:/app/docs
+      - ./generated_iac/${LLM_DIR}/docs:/app/docs
     networks:
       - a2a-net
 
@@ -84,9 +84,9 @@ services:
       - OPENAI_API_BASE=${OPENAI_API_BASE:-http://host.docker.internal:1234/v1}
       - LLM_MODEL=${LLM_MODEL:-qwen/qwen2.5-coder-14b}
     volumes:
-      - ./generated_iac/infra:/app/infra
-      - ./generated_iac/config:/app/config
-      - ./docs:/app/docs
+      - ./generated_iac/${LLM_DIR}/infra:/app/infra
+      - ./generated_iac/${LLM_DIR}/config:/app/config
+      - ./generated_iac/${LLM_DIR}/docs:/app/docs
     depends_on:
       - redis-broker
     networks:

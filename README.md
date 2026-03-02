@@ -144,19 +144,14 @@ Type your instructions. Only `Architect_Zero` listens to user messages — it th
 
 ### 6. View agent output
 
-All execution artifacts are saved to the `docs/` directory:
+All agent output is stored under `generated_iac/<LLM_DIR>/`:
 
 ```bash
-ls docs/
-# execution_log_Architect_Zero.md
-# execution_log_DevOps_Builder.md
-# execution_log_Security_Sentinel.md
-# user_requirements.md
-# implementation_plan.md
-# ...
+ls generated_iac/gpt-5-mini/
+# infra/    — Terraform modules
+# config/   — Ansible playbooks
+# docs/     — Execution logs, plans, requirements
 ```
-
-Generated Terraform and Ansible code lives in `generated_iac/`.
 
 ---
 ## Project Structure
@@ -177,13 +172,11 @@ ai-minilab/
 ├── client/                     # User console
 │   ├── console.py              # Interactive Redis CLI (stdin/tty)
 │   └── logs/                   # Conversation logs (auto-generated)
-├── generated_iac/              # Agent-generated Infrastructure as Code
-│   ├── infra/                  # Terraform modules (Proxmox VMs, witness)
-│   └── config/                 # Ansible playbooks (hardening, K8s bootstrap)
-├── docs/                       # Execution artifacts and documentation
-│   ├── user_requirements.md    # Operator decisions and constraints
-│   ├── implementation_plan.md  # Living plan maintained by Architect_Zero
-│   └── execution_log_*.md      # Per-agent tool call logs
+├── generated_iac/              # Agent-generated output (per-LLM)
+│   └── gpt-5-mini/            # One directory per LLM experiment
+│       ├── infra/              # Terraform modules (Proxmox VMs, witness)
+│       ├── config/             # Ansible playbooks (hardening, K8s bootstrap)
+│       └── docs/               # Execution logs, plans, requirements
 ├── tmp/                        # Bootstrap SSH key, CA certs
 ├── docker-compose.yml          # 6 services: Redis + 4 agents + user console
 ├── .env.template               # Environment variable template (copy to .env)
@@ -198,16 +191,20 @@ ai-minilab/
 
 ### Changing the LLM
 
-Edit `.env` to point to any OpenAI-compatible API:
+Edit `.env` to point to any OpenAI-compatible API. Update `LLM_DIR` to match so each LLM's output is kept separate:
 
 ```env
 # GPT-5-mini (tested, ~$0.27/session)
 LLM_MODEL=gpt-5-mini
+LLM_DIR=gpt-5-mini
 
 # Local Qwen via LM Studio (tested, quality limitations)
 OPENAI_API_BASE=http://host.docker.internal:1234/v1
 LLM_MODEL=qwen/qwen2.5-coder-14b
+LLM_DIR=qwen2.5-coder-14b
 ```
+
+Each LLM's generated IaC, playbooks, and execution docs are stored in `generated_iac/<LLM_DIR>/`.
 
 ### Modifying agent behavior
 
