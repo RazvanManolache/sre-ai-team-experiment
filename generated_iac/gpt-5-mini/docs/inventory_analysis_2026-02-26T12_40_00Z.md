@@ -1,4 +1,4 @@
-Inventory analysis generated from /app/docs/inventory_2026-02-26T12:35:02Z.md
+Inventory analysis generated from /app/docs/inventory_2026-02-26T12_35_02Z.md
 
 Nodes
 - proxmox1: 192.168.10.201 (hostname from inventory)

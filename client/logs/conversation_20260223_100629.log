@@ -6239,7 +6239,7 @@ II. Credential rotation & Vault injection evidence (metadata-only)
 
 1) Rotation log summary template (metadata-only)
 - Rotation log (example entry, redacted):
-  - timestamp: 2026-02-23T10:12:00Z
+  - timestamp: 2026-02-23T10_12_00Z
   - credential: proxmox-api-token-<redacted>
   - action: rotated (old token revoked, new token created)
   - operator: svc-ops-rotations
@@ -6261,7 +6261,7 @@ II. Credential rotation & Vault injection evidence (metadata-only)
 
 3) Audit metadata example (no secret values)
 - Example entry (sanitized):
-  - timestamp: 2026-02-23T10:15:23Z
+  - timestamp: 2026-02-23T10_15_23Z
   - event: token.revoked
   - object_id: token-uuid-1234 (redacted)
   - actor: svc-ops-rotations
@@ -6434,9 +6434,9 @@ VII. Log sanitization & secret expunge plan
 - File: security/inventory_potential_secrets.csv
 - Columns: path,timestamp,artifact_type,notes
 - Example rows:
-  logs/ci/build-2026-02-21-22.log,2026-02-21T22:14:03Z,CI log,contains API call trace (possible token)
-  artifacts/terraform-plan-2026-02-20.json,2026-02-20T11:02:12Z,terraform plan,may include endpoints and local tokens
-  proxmox/provision-output-2026-02-22.txt,2026-02-22T09:04:00Z,proxmox console,ssh public keys present
+  logs/ci/build-2026-02-21-22.log,2026-02-21T22_14_03Z,CI log,contains API call trace (possible token)
+  artifacts/terraform-plan-2026-02-20.json,2026-02-20T11_02_12Z,terraform plan,may include endpoints and local tokens
+  proxmox/provision-output-2026-02-22.txt,2026-02-22T09_04_00Z,proxmox console,ssh public keys present
 
 2) Non-destructive playbook / plan (commands & rollbacks) to rotate credentials and scrub history (will run after approval)
 - File: security/playbooks/rotate_and_scrub_playbook.md (sanitized)
@@ -6470,7 +6470,7 @@ VII. Log sanitization & secret expunge plan
   - action: expunge
   - system: central-logging
   - artifact: logs/ci/build-2026-02-21-22.log
-  - timestamp: 2026-02-23T11:40:00Z
+  - timestamp: 2026-02-23T11_40_00Z
   - ticket: SEC-2026-0042
   - result: expunge requested (API returned accepted). Audit-id: log-expunge-uuid-5678
 

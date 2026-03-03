@@ -1,4 +1,4 @@
-Quorum & Fencing Plan — 2026-02-26T12:40:30Z
+Quorum & Fencing Plan — 2026-02-26T12_40_30Z
 
 Executive summary
 - Recommendation: Deploy an external QDevice/witness VM (preferred) to provide a third vote for corosync. This is the safest option when BMC/IPMI fencing is not available.

@@ -1,4 +1,4 @@
-Ansible playbook run output (firewall apply) captured at 2026-02-26T13:12:02Z
+Ansible playbook run output (firewall apply) captured at 2026-02-26T13_12_02Z
 
 Output:
 

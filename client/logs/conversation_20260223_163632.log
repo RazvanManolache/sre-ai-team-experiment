@@ -1325,7 +1325,7 @@ Immediate high-priority actions (blockers for any history rewrite)
      - Immediately update all automation/runners/CI secret stores to use the new credentials.
    - Required artifacts (per rotated credential):
      - Proxmox: audit log line(s) or API response snippets showing old-token revoke and new-token creation (must include token id and timestamp), OR a ticket/incident reference containing that info (ticket ID, assignee, timestamp). Redact secrets.
-       - Acceptable example (sanitized): "2026-02-23T15:12:02Z user=infra-admin action=token-revoke id=pm-token-abc123 result=success"
+       - Acceptable example (sanitized): "2026-02-23T15_12_02Z user=infra-admin action=token-revoke id=pm-token-abc123 result=success"
        - New-token example: {"data":{"tokenid":"pm-token-new123","comment":"rotated 2026-02-23"}}
      - Cloud/provider/service-account: provider audit/event log or console screenshot (sanitized) showing deactivation/deletion of old keys and creation of new keys (include who/when/key-id), OR ticket reference with same fields.
        - Example: "IAM Access Key AKIAOLD deactivated by alice at 2026-02-23T15:20Z; new key AKIANEW created id=AKIANEW by alice 2026-02-23T15:25Z"
@@ -1558,7 +1558,7 @@ Immediate mandatory actions (do these now)
 2) Provide verifiable rotation evidence for each rotated secret (one artifact per secret)
    - Proxmox: sanitized audit log lines or API responses showing old-token revoke and new-token creation (include token id(s), timestamp, operator), OR a ticket/incident reference with those fields.
      - Acceptable examples:
-       - Audit log: "2026-02-23T15:12:02Z user=infra-admin action=token-revoke id=pm-token-abc123 result=success"
+       - Audit log: "2026-02-23T15_12_02Z user=infra-admin action=token-revoke id=pm-token-abc123 result=success"
        - API response: {"data":{"tokenid":"pm-token-new123", ...}}
    - Cloud/service/SSH keys: provider IAM audit event or ticket showing deactivation of old key and creation of new key (who/when/key-id) OR explicit statement "none existed".
    - CI/CD secrets: per-system confirmation (UI audit entry or ticket) showing secret updated (system, secret name, timestamp, operator).
@@ -1620,8 +1620,8 @@ Immediate high-priority remediation (do these now — owners: infra admins / sec
        - operator (username or ticket assignee).
      - Alternate acceptable: ticket/incident URL or ID containing the above fields and assignee.
    - Minimal acceptable example formats (sanitized):
-     - Proxmox audit: 2026-02-23T15:12:02Z user=infra-admin action=token-revoke id=pm-token-abc123 result=success
-     - Proxmox new token (API): {"data":{"tokenid":"pm-token-new123","created_by":"infra-admin","created_at":"2026-02-23T15:14:00Z"}}
+     - Proxmox audit: 2026-02-23T15_12_02Z user=infra-admin action=token-revoke id=pm-token-abc123 result=success
+     - Proxmox new token (API): {"data":{"tokenid":"pm-token-new123","created_by":"infra-admin","created_at":"2026-02-23T15_14_00Z"}}
      - Cloud IAM: "2026-02-23T15:20Z alice deactivated AccessKey AKIAOLD; new AccessKey AKIANEW created id=AKIANEW at 2026-02-23T15:25Z"
 
 2) Update secret consumers (owner: infra admins / CI owners)
@@ -1639,7 +1639,7 @@ Validation & containment (do these now and collect artifacts)
      - Verify old credentials no longer work against all checked endpoints.
    - Required artifacts:
      - Sanitized test logs showing successful auth with new creds. Each log must include timestamp, runner identity, endpoint, and non-sensitive response status (e.g., 200 OK).
-       - Example: 2026-02-23T15:40:00Z tester=qa-runner curl -H 'Authorization: PVEAPIToken=root@pam!pm-token-new123=<redacted>' -X GET https://proxmox.example/api2/json/version -> 200 OK
+       - Example: 2026-02-23T15_40_00Z tester=qa-runner curl -H 'Authorization: PVEAPIToken=root@pam!pm-token-new123=<redacted>' -X GET https://proxmox.example/api2/json/version -> 200 OK
      - Evidence/statement that old credentials were tested and rejected OR list of remaining systems still accepting old creds + remediation ETA.
 
 4) Pre-clean mirror clone & backup (owner: coordinator / infra)
@@ -1779,8 +1779,8 @@ Below is a concise, prioritized execution plan with explicit owners, actions, ar
 - Required artifact per rotated credential (one artifact each; sensitive values redacted):
   - Proxmox: audit log line or API response showing old-token revoke and new-token creation including token id (redacted allowed), ISO8601 timestamp, and operator identity OR a ticket/incident ID containing these fields.
     - Acceptable examples:
-      - Audit: "2026-02-23T15:12:02Z user=infra-admin action=token-revoke id=pm-token-***abc result=success"
-      - API: {"data":{"tokenid":"pm-token-***new","created_by":"infra-admin","created_at":"2026-02-23T15:14:00Z"}}
+      - Audit: "2026-02-23T15_12_02Z user=infra-admin action=token-revoke id=pm-token-***abc result=success"
+      - API: {"data":{"tokenid":"pm-token-***new","created_by":"infra-admin","created_at":"2026-02-23T15_14_00Z"}}
   - Cloud/provider/SSH keys: provider IAM audit event or ticket showing deactivation of old key and creation of new key (who/when/key-id), or explicit statement "none existed".
   - CI/CD secrets: per-system UI audit snippet/ticket showing secret updated (system, secret name, timestamp, operator).
 - Deliverable format: sanitized log snippet or ticket URL/ID per credential, with timestamp + operator.
@@ -1797,7 +1797,7 @@ Below is a concise, prioritized execution plan with explicit owners, actions, ar
   - Verify old credentials are rejected across checked endpoints; if any still accept old creds, list them with remediation ETA.
 - Required artifacts:
   - Sanitized validation logs with timestamp, runner identity, endpoint, and non-sensitive response (e.g., "200 OK").
-    - Example: "2026-02-23T15:40:00Z tester=qa-runner curl -H 'Authorization: PVEAPIToken=root@pam!pm-token-***new=<redacted>' -X GET https://proxmox.example/api2/json/version -> 200 OK"
+    - Example: "2026-02-23T15_40_00Z tester=qa-runner curl -H 'Authorization: PVEAPIToken=root@pam!pm-token-***new=<redacted>' -X GET https://proxmox.example/api2/json/version -> 200 OK"
   - Statement/list of systems tested and result (old creds rejected or pending with ETA).
   - Ticket ID(s) for the validation run(s).
 
@@ -1958,10 +1958,10 @@ Execution plan (detailed)
   - Update all CI/CD secret stores and runners to use the new credentials.
 - Required artifact per rotated credential (one artifact each; secrets redacted allowed):
   - Proxmox example (either):
-    - Audit log line: "2026-02-23T15:12:02Z user=infra-admin action=token-revoke id=pm-token-***abc result=success"
-    - OR API response (sanitized): {"data":{"tokenid":"pm-token-***new","created_by":"infra-admin","created_at":"2026-02-23T15:14:00Z"}}
-  - Cloud/provider keys example: "2026-02-23T15:20:00Z alice deactivated AccessKey AKIA***OLD; new AccessKey AKIA***NEW created id=AKIA***NEW at 2026-02-23T15:25:00Z"
-  - CI/CD secret update example (per system): "GitHub — Updated secret PROXMOX_TOKEN at 2026-02-23T15:30:00Z by infra-admin (audit-id xyz)"
+    - Audit log line: "2026-02-23T15_12_02Z user=infra-admin action=token-revoke id=pm-token-***abc result=success"
+    - OR API response (sanitized): {"data":{"tokenid":"pm-token-***new","created_by":"infra-admin","created_at":"2026-02-23T15_14_00Z"}}
+  - Cloud/provider keys example: "2026-02-23T15_20_00Z alice deactivated AccessKey AKIA***OLD; new AccessKey AKIA***NEW created id=AKIA***NEW at 2026-02-23T15_25_00Z"
+  - CI/CD secret update example (per system): "GitHub — Updated secret PROXMOX_TOKEN at 2026-02-23T15_30_00Z by infra-admin (audit-id xyz)"
   - Alternate acceptable: ticket/incident URL or ID that contains the above fields (timestamp + operator + resource id).
 
 2) Validation of new credentials from isolated runners — IMMEDIATE (owner: security ops / QA)
@@ -1970,8 +1970,8 @@ Execution plan (detailed)
   - Test the old credentials against the same endpoints to confirm rejection.
 - Required artifacts:
   - Sanitized success logs for new credentials (include timestamp, runner identity, endpoint, and response code):
-    - Example: "2026-02-23T15:40:00Z tester=qa-runner curl -H 'Authorization: PVEAPIToken=root@pam!pm-token-***new=<REDACTED>' -X GET https://proxmox.example/api2/json/version -> 200 OK"
-  - Evidence old credentials are rejected (sanitized): e.g., "2026-02-23T15:41:10Z tester=qa-runner curl with pm-token-***old -> 401 Unauthorized"
+    - Example: "2026-02-23T15_40_00Z tester=qa-runner curl -H 'Authorization: PVEAPIToken=root@pam!pm-token-***new=<REDACTED>' -X GET https://proxmox.example/api2/json/version -> 200 OK"
+  - Evidence old credentials are rejected (sanitized): e.g., "2026-02-23T15_41_10Z tester=qa-runner curl with pm-token-***old -> 401 Unauthorized"
   - If any systems still accept old creds, provide a short list and remediation ETA.
 
 3) Create pre-clean mirror backup & lock it down — IMMEDIATE (owner: coordinator / infra)
@@ -2135,8 +2135,8 @@ Priority remediation & evidence plan (owners and exact artifacts)
   - Proxmox token: sanitized audit log line OR API response showing both old-token revoke and new-token creation, containing:
     - token id (redacted OK), ISO8601 timestamp, operator identity
     - Example accepted formats:
-      - Audit log: "2026-02-23T15:12:02Z user=infra-admin action=token-revoke id=pm-token-***abc result=success"
-      - API response: {"data":{"tokenid":"pm-token-***new","created_by":"infra-admin","created_at":"2026-02-23T15:14:00Z"}}
+      - Audit log: "2026-02-23T15_12_02Z user=infra-admin action=token-revoke id=pm-token-***abc result=success"
+      - API response: {"data":{"tokenid":"pm-token-***new","created_by":"infra-admin","created_at":"2026-02-23T15_14_00Z"}}
   - Cloud/provider/SSH keys: provider IAM audit entry or ticket showing deactivation of old key and creation of new key (who/when/key-id) OR explicit "none existed".
   - CI/CD secrets: per-system UI audit entry or ticket showing secret name, timestamp, operator.
 
@@ -2152,8 +2152,8 @@ Priority remediation & evidence plan (owners and exact artifacts)
   - Verify old credentials no longer authenticate to those endpoints.
 - Required artifacts:
   - Sanitized success logs for new credentials including: timestamp, runner identity, endpoint, non-sensitive response (e.g., "200 OK").
-    - Example: "2026-02-23T15:40:00Z tester=qa-runner curl -H 'Authorization: PVEAPIToken=root@pam!pm-token-***new=<REDACTED>' -X GET https://proxmox.example/api2/json/version -> 200 OK"
-  - Sanitized negative test for old credentials (e.g., "2026-02-23T15:41:10Z tester=qa-runner curl with pm-token-***old -> 401 Unauthorized") or a list of any endpoints still accepting old creds + remediation ETA.
+    - Example: "2026-02-23T15_40_00Z tester=qa-runner curl -H 'Authorization: PVEAPIToken=root@pam!pm-token-***new=<REDACTED>' -X GET https://proxmox.example/api2/json/version -> 200 OK"
+  - Sanitized negative test for old credentials (e.g., "2026-02-23T15_41_10Z tester=qa-runner curl with pm-token-***old -> 401 Unauthorized") or a list of any endpoints still accepting old creds + remediation ETA.
 
 4) Pre-clean mirror backup — OWNER: coordinator / infra (create now)
 - Actions:
@@ -2199,10 +2199,10 @@ Priority remediation & evidence plan (owners and exact artifacts)
   - Post-migration verification outputs.
 
 Exact artifacts I will present to you for verification (one-line examples you can expect)
-- Proxmox rotation: "2026-02-23T15:12:02Z user=infra-admin action=token-revoke id=pm-token-***abc result=success" and/or {"data":{"tokenid":"pm-token-***new","created_by":"infra-admin","created_at":"2026-02-23T15:14:00Z"}}
-- Cloud key rotation: "2026-02-23T15:20:00Z alice deactivated AccessKey AKIA***OLD; new AccessKey AKIA***NEW created id=AKIA***NEW at 2026-02-23T15:25:00Z" OR "none existed"
-- CI/CD secret update: "GitHub — Updated secret PROXMOX_TOKEN at 2026-02-23T15:30:00Z by infra-admin (audit-id xyz)"
-- Validation test: "2026-02-23T15:40:00Z tester=qa-runner curl .../version -> 200 OK" and "2026-02-23T15:41:10Z tester=qa-runner curl with old token -> 401 Unauthorized"
+- Proxmox rotation: "2026-02-23T15_12_02Z user=infra-admin action=token-revoke id=pm-token-***abc result=success" and/or {"data":{"tokenid":"pm-token-***new","created_by":"infra-admin","created_at":"2026-02-23T15_14_00Z"}}
+- Cloud key rotation: "2026-02-23T15_20_00Z alice deactivated AccessKey AKIA***OLD; new AccessKey AKIA***NEW created id=AKIA***NEW at 2026-02-23T15_25_00Z" OR "none existed"
+- CI/CD secret update: "GitHub — Updated secret PROXMOX_TOKEN at 2026-02-23T15_30_00Z by infra-admin (audit-id xyz)"
+- Validation test: "2026-02-23T15_40_00Z tester=qa-runner curl .../version -> 200 OK" and "2026-02-23T15_41_10Z tester=qa-runner curl with old token -> 401 Unauthorized"
 - Mirror backup: "s3://incident-backups/repo-mirror-2026-02-23 — ticket #4567 — owner: infra-admin@example.com — retention: 90 days — ACL: org-admins only"
 - Coordinator tooling: "git-filter-repo 2.44.0" and "2026-02-23T16:00Z coordinator@host git ls-remote --heads origin -> success"
 - Affirmation: "We will run gitleaks vX.Y.Z and/or trufflehog vA.B.C against the rewritten history and provide clean reports (scanner version + timestamp) before any force-push."
@@ -2673,7 +2673,7 @@ drwxr-xr-x   3 root root   96 Feb 23 12:48 .terraform
 STDERR:
 fatal: not a git repository (or any parent up to mount point /app)
 Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
-[2026-02-23T15:31:37Z] Operator: root
+[2026-02-23T15_31_37Z] Operator: root
 ERROR: Not a git repository. Run this inside a fresh working clone.
 
 ```
@@ -2695,7 +2695,7 @@ Captured outputs / errors
   - STDERR:
     fatal: not a git repository (or any parent up to mount point /app)
     Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
-    [2026-02-23T15:31:37Z] Operator: root
+    [2026-02-23T15_31_37Z] Operator: root
     ERROR: Not a git repository. Run this inside a fresh working clone.
 
 Notes / explanation

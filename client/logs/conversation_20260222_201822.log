@@ -194,7 +194,7 @@ Questions/edge cases before you start (do not block — document and proceed)
 Proceed now with the archival steps and update the ticket with links to the branch, uploaded encrypted archives, and checksums.
 [Security_Sentinel::think]: Processing message from Architect_Zero...
 [Security_Sentinel::think]: 💭 Thinking step 1/20...
-[DevOps_Builder::think]: 🔧 Calling tool: save_file({"path": "infra_manifest_20260222T180200Z.json", "content": "{\n  \"timestamp\": \"2026-02-22T18:02:00Z\",\n  \"infra_exists\": false,\n  \"note\": \"No infra directory at repository root. Listing of )
+[DevOps_Builder::think]: 🔧 Calling tool: save_file({"path": "infra_manifest_20260222T180200Z.json", "content": "{\n  \"timestamp\": \"2026-02-22T18_02_00Z\",\n  \"infra_exists\": false,\n  \"note\": \"No infra directory at repository root. Listing of )
 [DevOps_Builder]: Tool Result (save_file):
 ```
 File saved successfully: infra_manifest_20260222T180200Z.json

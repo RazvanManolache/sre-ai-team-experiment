@@ -11,4 +11,4 @@ stderr:
 
 Action: Aborting play to avoid loading invalid nft rules on nodes. No firewall changes applied.
 
-Saved: /app/docs/firewall_apply_run_2026-02-26T16:56:10Z.md (chmod 600)
+Saved: /app/docs/firewall_apply_run_2026-02-26T16_56_10Z.md (chmod 600)

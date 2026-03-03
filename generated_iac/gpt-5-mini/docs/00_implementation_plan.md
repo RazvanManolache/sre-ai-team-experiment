@@ -2,7 +2,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -14,13 +14,13 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation artifacts and authorized safe apply sequence
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation artifacts and authorized safe apply sequence
   - Action: Security_Sentinel has reviewed the proposed nft template validation artifacts and replied "APPROVED" to proceed with the safe apply sequence.
   - Next step instructed by Architect_Zero: @DevOps_Builder is to execute the safe apply sequence immediately in the builder container, following the exact runbook steps: local render & validation (already completed), copy validated nft to nodes, load nft rules, run bootstrap SSH key cleanup, run verification plays, capture all outputs to /app/docs with chmod 600, and stop on the first failure. All outputs must be saved at the paths specified in the runbook and reported back here.
   - Constraints reiterated: Do NOT provision witness VMs, enable HA, run STONITH, or execute terraform apply. Do NOT write secrets into any /app/docs files. All outputs with sensitive content must be chmod 600.
   - Reporting requirement: After completion (or on failure), @DevOps_Builder must post the exact file paths created (one per line) and a concise 1-2 line summary of results as specified in the runbook.
 
-- Entry: 2026-02-26T17:12:00Z — Security_Sentinel APPROVED local proposal; instructing DevOps_Builder to execute safe apply sequence
+- Entry: 2026-02-26T17_12_00Z — Security_Sentinel APPROVED local proposal; instructing DevOps_Builder to execute safe apply sequence
   - Status: Security_Sentinel has replied "APPROVED" to proceed with the safe apply sequence for host-firewall compensations. The rendered nft proposal is present at /app/docs/proposed_50-proxmox-mgmt.nft and validated offline by the operator (validation artifact expected to be uploaded as /app/docs/proposed_50-proxmox-mgmt_validation_<TS>.md).
   - Action: @DevOps_Builder is authorized to perform the safe apply sequence now, following the exact runbook steps already documented in the implementation plan (render validated file, copy to nodes, load nft rules, run bootstrap-key cleanup, run verification), stop on first failure and save outputs to /app/docs with chmod 600.
   - Preconditions (re-verified):
@@ -31,7 +31,7 @@ Note: This entry records the operator's explicit authorization to let the builde
     - The validated nft file is saved at /app/docs/proposed_50-proxmox-mgmt.nft and the operator has uploaded the validation output at /app/docs/proposed_50-proxmox-mgmt_validation_<TS>.md (builder MUST verify presence and content before applying).
   - Reporting: @DevOps_Builder must post the exact file paths created (one per line) under /app/docs after the run and a concise 1-2 line summary of results. If any failure occurs, save full stdout/stderr to /app/docs/issue_report_compensations_<TS>.md (chmod 600) and stop.
   - Constraints reiterated: No witness provisioning, no HA enabling, no STONITH, no terraform apply. No secrets written into /app/docs. All saved artifacts with sensitive data must be chmod 600.
-2026-02-26T17:05:00Z - CONTINUE_AUTHORIZE_RUN
+2026-02-26T17_05_00Z - CONTINUE_AUTHORIZE_RUN
 - Actor: @Architect_Zero
 - Context: Operator replied "continue" after pausing. nftables has been installed in the builder environment and Security_Sentinel previously issued APPROVED for the validated proposal.
 - Decision: Proceed with the safe apply sequence for host-level compensating controls (firewall apply, bootstrap key cleanup, verification). @DevOps_Builder is to execute the run, stop on first failure, and save all outputs to /app/docs with restrictive permissions (chmod 600).
@@ -57,7 +57,7 @@ Signed: Architect_Zero
 
 
 
-- 2026-02-26T17:10:00Z - Action: Operator requested FIX_TEMPLATE_AND_RETRY.
+- 2026-02-26T17_10_00Z - Action: Operator requested FIX_TEMPLATE_AND_RETRY.
   - Owner: @DevOps_Builder (execute), overseen by @Architect_Zero.
   - Description: Fix the nft Jinja2 template so it emits strictly valid nft syntax (one explicit rule per IP/port), re-render locally, validate with `nft -c -f` on the builder controller, and then re-run the safe compensating sequence (firewall apply -> bootstrap key cleanup -> verification). Stop on first failure and save full outputs to /app/docs with chmod 600.
   - Preconditions: BOOTSTRAP_SSH_KEY readable, nft present in builder runtime, ADMIN_JUMP_HOST_IPS = ["192.168.10.211","192.168.10.10"], PROXMOX_NODE_IPS = ["192.168.10.201","192.168.10.202"], OOB_PLAN confirmed (local on-site console).
@@ -76,12 +76,12 @@ Signed: Architect_Zero
   - Next step: @DevOps_Builder to implement template fix and re-run per above. Report created file paths and a 1-2 line status summary when complete.
 
 
-- 2026-02-26T17:10:00Z - Action: Operator requested FIX_TEMPLATE_AND_RETRY.
+- 2026-02-26T17_10_00Z - Action: Operator requested FIX_TEMPLATE_AND_RETRY.
   - Owner: @DevOps_Builder (execute), overseen by @Architect_Z)
-2026-02-26T17:00:00Z - Architect_Zero action: Recorded operator authorization FIX_TEMPLATE_AND_RETRY. Directed DevOps_Builder to implement explicit per-IP nft template rendering, local validation, and safe apply sequence. Security_Sentinel previously APPROVED gating. Owner: @DevOps_Builder. Artifacts required post-run: playbook_fix_patch_<TS>.diff, proposed_50-proxmox-mgmt.nft, proposed_50-proxmox-mgmt_validation_<TS>.md, local_render_proof_<TS>.md, firewall_apply_run_<TS>.md, cleanup_bootstrap_key_<TS>.md, firewall_verify_192.168.10.201_<TS>.md, firewall_verify_192.168.10.202_<TS>.md, verify_pvecm_<TS>.md. All files must be chmod 600.
+2026-02-26T17_00_00Z - Architect_Zero action: Recorded operator authorization FIX_TEMPLATE_AND_RETRY. Directed DevOps_Builder to implement explicit per-IP nft template rendering, local validation, and safe apply sequence. Security_Sentinel previously APPROVED gating. Owner: @DevOps_Builder. Artifacts required post-run: playbook_fix_patch_<TS>.diff, proposed_50-proxmox-mgmt.nft, proposed_50-proxmox-mgmt_validation_<TS>.md, local_render_proof_<TS>.md, firewall_apply_run_<TS>.md, cleanup_bootstrap_key_<TS>.md, firewall_verify_192.168.10.201_<TS>.md, firewall_verify_192.168.10.202_<TS>.md, verify_pvecm_<TS>.md. All files must be chmod 600.
 
 
-- Entry: 2026-02-26T17:10:00Z
+- Entry: 2026-02-26T17_10_00Z
   - Action: INSTALL_PRIVILEGED_NFT_ON_BUILDER_AND_VALIDATE
   - Owner: @DevOps_Builder
   - Triggered by: Operator (approved to install nft and allow privileged local validation in builder environment)
@@ -100,7 +100,7 @@ Signed: Architect_Zero
 
 
 ## FIX_TEMPLATE_FURTHER_AND_RETRY — author: Architect_Zero
-Timestamp: 2026-02-26T16:59:00Z (UTC)
+Timestamp: 2026-02-26T16_59_00Z (UTC)
 
 Decision: Proceed to make the nft Jinja2 template more conservative to avoid any set/list injection issues. The builder is authorized to perform privileged local validation and then to proceed with the safe apply sequence only if local validation returns success (nft -c -f rc == 0) and Security_Sentinel has previously APPROVED.
 
@@ -138,7 +138,7 @@ Approval: Security_Sentinel previously APPROVED applying compensations after val
 
 
 ## ITERATION: FIX_TEMPLATE_FURTHER_AND_RETRY v2 — author: Architect_Zero
-Timestamp: 2026-02-26T17:10:00Z (UTC)
+Timestamp: 2026-02-26T17_10_00Z (UTC)
 
 Context:
 - Prior iterations attempted to move Jinja list/set constructs into per-item lines. Local privileged validation still failed due to malformed rendered tokens present in the proposed render. We will now implement a more conservative template rendering that emits one explicit rule per IP and per port with no set/list or multi-port constructs at all (single port per line). This reduces template formatting risk and simplifies nft parsing.
@@ -167,7 +167,7 @@ Reporting:
 Security review:
 - When the artifacts from a successful apply are uploaded, tag @Security_Sentinel for re-review. Security_Sentinel must return APPROVED before any witness/HA/STONITH/terraform apply actions are taken.
 
-Entry: 2026-02-26T17:20:00Z - Architect_Zero directive
+Entry: 2026-02-26T17_20_00Z - Architect_Zero directive
 - Action: Operator instructed to proceed to implementation without additional local nft validation if rendering was successful and syntax is OK.
 - Decision: Per operator instruction, proceed to apply compensating hardening sequence immediately (apply host firewall -> cleanup bootstrap key -> verification) even if additional local validation steps are skipped. Note: This deviates from Security_Sentinel's recommended gating (local validation before apply) but is performed at the operator's explicit direction.
 - Owner: @DevOps_Builder
@@ -185,7 +185,7 @@ Entry: 2026-02-26T17:20:00Z - Architect_Zero directive
   5) Stop on first failure; save full output to /app/docs/issue_report_compensations_<TS>.md (chmod 600) and report path.
 - Reporting: DevOps_Builder must post exact created file paths (one per line) and a concise 1-2 line status summary after completion.
 - Review: After artifacts are uploaded Architect_Zero will tag @Security_Sentinel for re-review of the artifacts.
-- Note: This action overrides the prior local-validation gating by operator instruction. All other constraints remain in effect (no witness/HA/STONITH/terraform apply until Security_Sentinel re-approves post-apply artifacts).2026-02-26T17:10:00Z - Architect_Zero action log
+- Note: This action overrides the prior local-validation gating by operator instruction. All other constraints remain in effect (no witness/HA/STONITH/terraform apply until Security_Sentinel re-approves post-apply artifacts).2026-02-26T17_10_00Z - Architect_Zero action log
 - Summary: Operator authorized automatic progression. Security_Sentinel APPROVED the validated nft proposal and the operator authorized proceeding with the safe apply sequence (firewall apply → bootstrap-key cleanup → verification). DevOps_Builder instructed to proceed with execution per the approved runbook and to stop on first failure.
 
 Immediate instructions issued to DevOps_Builder (safety-first):
@@ -217,7 +217,7 @@ Notes:
 
 
 
-- Entry: 2026-02-26T17:40:00Z — SSH host key handling (Architect_Zero directive)
+- Entry: 2026-02-26T17_40_00Z — SSH host key handling (Architect_Zero directive)
   - Context: Ansible runs failed due to SSH host key verification failure for targets 192.168.10.201 and 192.168.10.202. Operator indicated SSH connectivity works but host verification must be accepted or skipped.
   - Decision: Prefer accepting host keys (secure) over disabling host key checking. The builder is authorized to populate the control host's known_hosts with the target hosts' keys before re-running playbooks. If operator explicitly requests skipping host key checking, only proceed after explicit tokenized approval.
   - Exact safe actions for @DevOps_Builder (do not run without reading this plan):
@@ -243,7 +243,7 @@ Notes:
 
 
 
-2026-02-26T17:40:00Z - Architect_Zero instruction: User requested DevOps_Builder to re-check the nft template and retry validation/apply. Action: @DevOps_Builder to run a template sanity check and local nft validation (privileged), then report results.
+2026-02-26T17_40_00Z - Architect_Zero instruction: User requested DevOps_Builder to re-check the nft template and retry validation/apply. Action: @DevOps_Builder to run a template sanity check and local nft validation (privileged), then report results.
 
 Steps for DevOps_Builder:
 1) Re-run a strict template lint and render check (no remote changes):
@@ -267,7 +267,7 @@ Reviewer: @Security_Sentinel
 Coordinator: @Architect_Zero
 
 
-- Entry: 2026-02-26T17:55:00Z — Operator command: PROCEED_APPLY_WITHOUT_FURTHER_VALIDATION
+- Entry: 2026-02-26T17_55_00Z — Operator command: PROCEED_APPLY_WITHOUT_FURTHER_VALIDATION
   - Actor: Operator (explicit instruction)
   - Decision: Per operator instruction, proceed to apply the conservative nft template and execute the safe compensating sequence immediately even if additional local validation steps are skipped. Builder must still follow stop-on-first-failure, capture all outputs, and save artifacts to /app/docs with chmod 600.
   - Preconditions (must be verified by @DevOps_Builder before applying):
@@ -286,7 +286,7 @@ Coordinator: @Architect_Zero
   - Note: This entry documents the operator's explicit override to proceed without further validation; builder must still operate under the stop-on-failure policy and capture full artifacts for Security_Sentinel review.
 
 
-2026-02-26T17:40:00Z - Architect_Zero coordinated next actions (summary and mandatory steps)
+2026-02-26T17_40_00Z - Architect_Zero coordinated next actions (summary and mandatory steps)
 - Current state:
   - Proxmox nodes: 192.168.10.201, 192.168.10.202
   - Admin jump hosts allowed: 192.168.10.211, 192.168.10.10
@@ -366,7 +366,7 @@ Security review requested: @Security_Sentinel
 
 
 ---
-2026-02-26T17:40:00Z - FIX_TEMPLATE_AND_RETRY_NOW executed
+2026-02-26T17_40_00Z - FIX_TEMPLATE_AND_RETRY_NOW executed
 - Owner: @DevOps_Builder (execution), overseen by @Architect_Zero
 - Trigger: User instructed FIX_TEMPLATE_AND_RETRY_NOW to correct nft template rendering and retry apply.
 
@@ -379,16 +379,16 @@ Actions performed so far:
 
 Files produced by builder (for review):
 - /app/docs/proposed_50-proxmox-mgmt.nft
-- /app/docs/proposed_50-proxmox-mgmt_validation_runtime_2026-02-26T14:54:59Z.md
-- /app/docs/proposed_50-proxmox-mgmt_validation_runtime_2026-02-26T16:58:00Z.md
-- /app/docs/playbook_fix_patch_2026-02-26T16:55:00Z.diff
-- /app/docs/firewall_apply_run_2026-02-26T15:20:04Z.md
-- /app/docs/firewall_apply_run_2026-02-26T17:33:20Z.md
-- /app/docs/50-proxmox-mgmt.192.168.10.201_2026-02-26T17:33:20Z.nft
-- /app/docs/50-proxmox-mgmt.192.168.10.202_2026-02-26T17:33:20Z.nft
-- /app/docs/node_render_diff_192.168.10.201_2026-02-26T17:33:20Z.diff
-- /app/docs/node_render_diff_192.168.10.202_2026-02-26T17:33:20Z.diff
-- /app/docs/fetch_and_diff_proof_2026-02-26T17:33:20Z.md
+- /app/docs/proposed_50-proxmox-mgmt_validation_runtime_2026-02-26T14_54_59Z.md
+- /app/docs/proposed_50-proxmox-mgmt_validation_runtime_2026-02-26T16_58_00Z.md
+- /app/docs/playbook_fix_patch_2026-02-26T16_55_00Z.diff
+- /app/docs/firewall_apply_run_2026-02-26T15_20_04Z.md
+- /app/docs/firewall_apply_run_2026-02-26T17_33_20Z.md
+- /app/docs/50-proxmox-mgmt.192.168.10.201_2026-02-26T17_33_20Z.nft
+- /app/docs/50-proxmox-mgmt.192.168.10.202_2026-02-26T17_33_20Z.nft
+- /app/docs/node_render_diff_192.168.10.201_2026-02-26T17_33_20Z.diff
+- /app/docs/node_render_diff_192.168.10.202_2026-02-26T17_33_20Z.diff
+- /app/docs/fetch_and_diff_proof_2026-02-26T17_33_20Z.md
 
 Root cause (analysis):
 - Template rendered correctly on the controller, but on-target rendering produced per-character tokens (likely because the variable was interpreted as a string on-target and iterated over as characters). This resulted in malformed nft lines on the nodes, causing nft -c to fail during target-side validation.
@@ -414,23 +414,23 @@ Constraints and gating:
 
 
 ---
-2026-02-26T17:40:00Z - FIX_TEMPLATE_AND_RETRY_NOW executed
+2026-02-26T17_40_00Z - FIX_TEMPLATE_AND_RETRY_NOW executed
 - Owner: @DevOps_Builder (execution), overseen by @Architect_Zero
 - Trigger: User instructed to retry with further template hardening and privileged validation.
 - Action: Updated template to coerce variables and emit one explicit nft rule per IP/port; will re-render and run privileged local validation and then safe apply sequence if validation succeeds.
 
 
 ---
-2026-02-26T17:40:00Z - FIX_TEMPLATE_AND_RETRY_NOW executed
+2026-02-26T17_40_00Z - FIX_TEMPLATE_AND_RETRY_NOW executed
 - Owner: @DevOps_Builder (execution), overseen by @Architect_Zero
 - Action: Defensive template update applied to /app/config/ansible_proxmox_hardening/templates/50-proxmox-mgmt.nft.j2 to coerce variables to lists and emit one explicit nft rule per IP/port. Rendered proposal saved to /app/docs/proposed_50-proxmox-mgmt.nft.
 - Local privileged validation attempted via nft -c -f /tmp/50-proxmox-mgmt.nft; validation failed in builder runtime due to environment capability restrictions and/or remaining tokenization issues observed on-target. No rules were loaded to nodes.
 - Artifacts produced:
   - /app/docs/proposed_50-proxmox-mgmt.nft
-  - /app/docs/proposed_50-proxmox-mgmt_validation_runtime_2026-02-26T14:54:59Z.md
-  - /app/docs/proposed_50-proxmox-mgmt_validation_2026-02-26T16:58:00Z.md
-  - /app/docs/playbook_fix_patch_2026-02-26T16:55:00Z.diff
-  - /app/docs/firewall_apply_run_2026-02-26T17:33:20Z.md
+  - /app/docs/proposed_50-proxmox-mgmt_validation_runtime_2026-02-26T14_54_59Z.md
+  - /app/docs/proposed_50-proxmox-mgmt_validation_2026-02-26T16_58_00Z.md
+  - /app/docs/playbook_fix_patch_2026-02-26T16_55_00Z.diff
+  - /app/docs/firewall_apply_run_2026-02-26T17_33_20Z.md
 - Next step: @DevOps_Builder fetched the node-side rendered files and produced diffs; root cause appears to be per-character iteration when variables were treated as strings on-target. Recommended remediation: template defensive coercion (implemented) and ensure rendering occurs on controller (delegate_to: localhost) prior to copy. Proceeding per user instruction to FIX_TEMPLATE_AND_RETRY_NOW.
 
 
@@ -452,7 +452,7 @@ Constraints and gating:
   - Note: This entry documents the operator's explicit instruction to retry template fixes. The builder must still stop on the first failure and capture full logs for review.
 
 
-- Entry: 2026-02-26T18:10:00Z — FIX_PLAYBOOK_RENDER_TO_CONTROLLER_AND_RETRY (Operator instruction executed)
+- Entry: 2026-02-26T18_10_00Z — FIX_PLAYBOOK_RENDER_TO_CONTROLLER_AND_RETRY (Operator instruction executed)
   - Actor: Operator requested FIX_PLAYBOOK_RENDER_TO_CONTROLLER_AND_RETRY
   - Owner: @DevOps_Builder (execute), overseen by @Architect_Zero
   - Description: Enforce controller-side template rendering (delegate_to: localhost, run_once: true) and coercive template handling to prevent on-target per-character iteration of string variables. The builder will:
@@ -476,7 +476,7 @@ Constraints and gating:
   - Notes: This entry documents the operator's explicit instruction to render on controller and retry. The builder must implement run_once + delegate_to: localhost rendering and coercive template logic to avoid per-character iteration bugs that were observed when templating occurred on-target.
 
 
-- Entry: 2026-02-26T18:30:00Z — Architect_Zero directive: EXECUTE_CONTROLLER_RENDER_AND_APPLY_NOW
+- Entry: 2026-02-26T18_30_00Z — Architect_Zero directive: EXECUTE_CONTROLLER_RENDER_AND_APPLY_NOW
   - Owner: @DevOps_Builder
   - Action: With the defensive template in place and controller-side rendering enforced (delegate_to: localhost, run_once: true), execute the exact safe apply sequence now. This run must follow the stop-on-failure policy and capture all artifacts to /app/docs with chmod 600.
   - Preconditions (must be verified before any node change):
@@ -497,13 +497,13 @@ Constraints and gating:
   - Signed: Architect_Zero
 
 
-- Entry: 2026-02-26T18:45:00Z — Architect_Zero directive: EXECUTE_CONTROLLER_RENDER_AND_APPLY_NOW (record)
+- Entry: 2026-02-26T18_45_00Z — Architect_Zero directive: EXECUTE_CONTROLLER_RENDER_AND_APPLY_NOW (record)
   - Action: With Defensive template in place and controller-side rendering enforced, proceed to execute the controller-render + privileged local validation and, on success, the safe apply sequence (copy to nodes, on-target validation, load rules, bootstrap-key cleanup, verification). Stop on first failure, save full stdout/stderr and all artifacts to /app/docs with chmod 600, and report exact file paths.
   - Preconditions (must be verified before any node change): BOOTSTRAP_SSH_KEY readable; /app/docs/proposed_50-proxmox-mgmt.nft exists; nft available in builder runtime or admin validation uploaded; OOB_PLAN confirmed; admin_allowed_ips and proxmox_node_ips as previously defined.
   - Reporting: post exact file paths created (one per line) and a concise 1-2 line summary. Tag @Security_Sentinel for re-review once artifacts are uploaded.
   - Note: This entry documents Architect_Zero's instruction to proceed per operator override and prior Security_Sentinel approvals. All safety gates and stop-on-failure policy remain in effect.
 
-- Entry: 2026-02-26T18:55:00Z — Architect_Zero directive: Normalize array quoting to escaped double quotes
+- Entry: 2026-02-26T18_55_00Z — Architect_Zero directive: Normalize array quoting to escaped double quotes
   - Action: Per operator instruction, all arrays passed via extra-vars, templates, and documentation shall use double-quoted strings instead of single-quoted strings to avoid Ansible/Jinja treating list literals as single strings in some shell/extra-vars contexts. Example canonical forms to use in command invocations and templates:
     - Wrong (single-quoted strings in arrays): proxmox_node_ips=['192.168.10.201','192.168.10.202']
     - Correct (double-quoted strings in arrays): proxmox_node_ips=["192.168.10.201","192.168.10.202"]
@@ -534,7 +534,7 @@ Constraints and gating:
   - Audit: After changing invocation scripts or runbook examples, append an audit line to /app/docs/implementation_plan.md listing the modified files and timestamp.
   - Note: This entry documents the operator's explicit runtime guidance. The builder must follow this convention in subsequent runs.
 
-- Entry: 2026-02-26T19:10:00Z — Operator token: PROCEED_WITH_ESCAPED_QUOTE_RUN
+- Entry: 2026-02-26T19_10_00Z — Operator token: PROCEED_WITH_ESCAPED_QUOTE_RUN
   - Actor: Operator
   - Action: Per operator instruction, proceed to re-run the controller-render + privileged validation and, on successful validation, execute the safe apply sequence using escaped double-quoted array extra-vars in all ansible invocations. The builder is authorized to run the sequence now, stop on first failure, and save all artifacts to /app/docs with chmod 600.
   - Required invocation example to use (exact):
@@ -553,7 +553,7 @@ Constraints and gating:
   - Reviewer: @Security_Sentinel (will be tagged after artifacts are uploaded)
   - Notes: This entry enforces the escaped double-quote extra-vars convention and documents operator authorization to proceed under that convention.
 
-2026-02-26T19:25:00Z - Operator override recorded
+2026-02-26T19_25_00Z - Operator override recorded
 - Actor: operator (via chat)
 - Action: Operator instructed @DevOps_Builder to proceed with the implementation despite local builder runtime nft validation returning "Operation not permitted". The operator accepts the risk of proceeding without a successful local nft -c validation in the builder container and authorizes the builder to continue the safe apply sequence as documented.
 - Constraints: Builder MUST still follow the safe runbook: controller-side render (delegate_to: localhost/run_once), copy validated file to nodes, on-target validation (nft -c -f), load rules, cleanup bootstrap key, and run verification. The builder must STOP on the first failure, capture full stdout/stderr, save all artifacts to /app/docs with chmod 600, and produce the exact file paths created and a 1-2 line status summary.
@@ -612,13 +612,13 @@ Constraints and gating:
   - Constraints: Do NOT modify target hosts' SSH configuration. Do NOT write private keys into /app/docs. All saved artifacts must be chmod 600.
   - Oversight: @Architect_Zero
 
-- Entry: 2026-02-26T19:12:00Z — Architect_Zero: SECURITY_SENTINEL APPROVED, instructing @DevOps_Builder to execute the next approved step now.
+- Entry: 2026-02-26T19_12_00Z — Architect_Zero: SECURITY_SENTINEL APPROVED, instructing @DevOps_Builder to execute the next approved step now.
   - Action: With Security_Sentinel APPROVED, @DevOps_Builder is authorized to proceed immediately with the controller-render + safe apply sequence per the Implementation Plan, using escaped double-quoted extra-vars and the operator's override to proceed without local validation if necessary.
   - Mandate: Stop on the first failure, capture full stdout/stderr for every step, save all artifacts under /app/docs with chmod 600, and report back here with exact file paths (one per line) and a concise 1–2 line status summary.
   - Review: After artifacts are uploaded Architect_Zero will tag @Security_Sentinel for final re-review.
 
-- Entry: 2026-02-26T19:12:00Z — Architect_Zero: SECURITY_SENTINEL APPROVED, instructing @DevOps_Builder to execute the next approved step (controller-render + privileged validation + safe apply) per the implementation plan; stop on first failure and save all artifacts to /app/docs with chmod 600.
-- Entry: 2026-02-26T19:30:00Z — Architect_Zero directive: INSTRUCT_DEVOPS_BUILDER_EXECUTE_APPLY_NOW
+- Entry: 2026-02-26T19_12_00Z — Architect_Zero: SECURITY_SENTINEL APPROVED, instructing @DevOps_Builder to execute the next approved step (controller-render + privileged validation + safe apply) per the implementation plan; stop on first failure and save all artifacts to /app/docs with chmod 600.
+- Entry: 2026-02-26T19_30_00Z — Architect_Zero directive: INSTRUCT_DEVOPS_BUILDER_EXECUTE_APPLY_NOW
   - Actor: @Architect_Zero
   - Action: Instructed @DevOps_Builder to execute the approved controller-render + safe apply sequence immediately per the Implementation Plan using escaped double-quoted extra-vars. The run must stop on first failure, capture full stdout/stderr, save ALL artifacts under /app/docs with chmod 600, and report back with exact file paths (one per line) and a concise 1–2 line status summary.
   - Invocation (exact):
@@ -628,7 +628,7 @@ Constraints and gating:
   - Note: This entry documents the Architect_Zero instruction to proceed as requested by the operator. Security_Sentinel has been notified for review of post-apply artifacts after the run completes.
 
 
-- Entry: 2026-02-26T20:20:00Z — FIX_SAVE_RULES_TASK_AND_RETRY
+- Entry: 2026-02-26T20_20_00Z — FIX_SAVE_RULES_TASK_AND_RETRY
   - Actor: Architect_Zero (instruction)
   - Purpose: Fix the playbook task that captures/saves nft rules on-target so that shell redirection is executed by a shell and not passed as arguments to the nft binary. Re-run the safe apply sequence (controller render -> privileged validation or operator-overridden apply -> apply -> cleanup -> verify) and stop on the first failure. Save full stdout/stderr and all artifacts to /app/docs with chmod 600.
   - Problem addressed: Current task invokes `nft list ruleset > /etc/nftables.conf || true` without a shell, causing nft to interpret '>' and '||' as tokens and fail with "syntax error, unexpected >". This aborts the apply sequence and prevents rules from being saved.
@@ -676,7 +676,7 @@ Constraints and gating:
   - Next action: Builder team to implement the task fix and retry execution as soon as possible, following the steps above and saving artifacts under /app/docs. Architect_Zero will monitor and coordinate the review.
 
 
-- Entry: 2026-02-26T20:30:00Z — FIX_SAVE_RULES_TASK_AND_RETRY (Architect_Zero instruction, Security_Sentinel APPROVED)
+- Entry: 2026-02-26T20_30_00Z — FIX_SAVE_RULES_TASK_AND_RETRY (Architect_Zero instruction, Security_Sentinel APPROVED)
   - Decision: Implement the playbook task fix so that on-target capture of `nft list ruleset` output is done via a shell or via captured output -> copy, preventing the nft binary from misinterpreting shell redirection tokens. After the fix, re-run the approved controller-render + apply sequence immediately, stopping on the first failure and saving all artifacts to /app/docs with chmod 600.
   - Exact required changes (must be implemented exactly):
     1) Replace the failing task (that runs `nft list ruleset > /etc/nftables.conf || true` without a shell) with one of the following safe patterns (pick one and implement):
@@ -721,11 +721,11 @@ Constraints and gating:
   - Review: @Security_Sentinel has APPROVED this remediation; Architect_Zero instructs @DevOps_Builder to implement the fix and execute the retry now per the plan above. After artifacts are uploaded Architect_Zero will tag @Security_Sentinel for final review of the produced artifacts.
   - Owner: @DevOps_Builder
   - Coordinator: @Architect_Zero
-  - Timestamp: 2026-02-26T20:30:00Z (UTC)
+  - Timestamp: 2026-02-26T20_30_00Z (UTC)
 
 
 - Action: RUN_VERIFICATION_SUMMARY requested by operator (Architect_Zero coordination)
-  - Timestamp: 2026-02-26T20:45:00Z
+  - Timestamp: 2026-02-26T20_45_00Z
   - Purpose: Collect and consolidate verification outputs after the firewall apply attempt and playbook fixes. Save artifacts to /app/docs with chmod 600 and stop on first failure (save issue file).
   - Required artifacts to produce (each saved under /app/docs with restrictive perms):
     - /app/docs/firewall_verify_192.168.10.201_<TS>.md
@@ -761,7 +761,7 @@ Constraints and gating:
   - Reviewer for the artifacts: @Security_Sentinel
   - Safety: Do NOT make any additional changes to node firewall rules or system configuration during verification collection; this is read-only verification. If any critical degradation is observed (pvecm/corosync split, loss of cluster quorum), revert immediately per runbook and save revert outputs to /app/docs/issue_report_compensations_<TS>.md (chmod 600) and STOP.
 
-- Entry: 2026-02-26T20:50:00Z — RUN_VERIFICATION_SUMMARY instructed
+- Entry: 2026-02-26T20_50_00Z — RUN_VERIFICATION_SUMMARY instructed
   - Owner: @DevOps_Builder (execute), coordinated by @Architect_Zero
   - Action: Collect verification artifacts from both Proxmox nodes and supporting probes per the RUN_VERIFICATION_SUMMARY steps. Stop on first failure, save full stdout/stderr to /app/docs with chmod 600, and report back with exact file paths (one per line) and a concise 1–2 line status summary.
   - Required outputs (saved under /app/docs, chmod 600):
@@ -860,7 +860,7 @@ Completion
 Compact plan appended by Architect_Zero
 
 
-- Entry: 2026-02-26T20:45:00Z — FIX_CLEANUP_TASK_CHGRP (Architect_Zero directive)
+- Entry: 2026-02-26T20_45_00Z — FIX_CLEANUP_TASK_CHGRP (Architect_Zero directive)
   - Context: The bootstrap-key cleanup play failed on the task "Ensure authorized_keys permissions" when attempting to chgrp /etc/pve/priv/authorized_keys to a group that caused chgrp to fail on the Proxmox nodes. The cleanup play aborted and an issue report was saved.
   - Decision: Implement a safe fallback in the cleanup play to avoid a failing chgrp. Prefer setting safe owner and mode without changing group, or attempt chgrp conditionally only if the group exists and chgrp is permitted. Save a patch diff and re-run the cleanup play; stop on first failure and save all outputs to /app/docs (chmod 600).
   - Exact remediation steps (must be implemented exactly):

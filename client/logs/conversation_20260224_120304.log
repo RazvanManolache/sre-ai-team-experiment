@@ -1773,7 +1773,7 @@ Note: per process, only @Security_Sentinel is tagged for review at this stage.
 ```
 # Run report
 Phase 1 - Ephemeral provisioning host hardening & key lifecycle
-Timestamp: 2026-02-24T10:14:18Z
+Timestamp: 2026-02-24T10_14_18Z
 
 Commands executed (no secret values):
 - script -q -f /tmp/provision-session.log
@@ -1788,10 +1788,10 @@ Commands executed (no secret values):
 
 Verification outputs:
 
-recording_started: 2026-02-24T10:14:18Z
+recording_started: 2026-02-24T10_14_18Z
 sysctl: /tmp/phase1.sh: line 11: sysctl: command not found
 ulimit: 
-timestamp: 2026-02-24T10:14:18Z
+timestamp: 2026-02-24T10_14_18Z
 chmod_out: 
 ssh-agent_output:
 Agent pid 52
@@ -1832,7 +1832,7 @@ What I did (commands executed, no secrets included)
 
 Phase 1 verification outputs (non-secret)
 - Recording started timestamp:
-  - recording_started: 2026-02-24T10:14:18Z
+  - recording_started: 2026-02-24T10_14_18Z
 - sysctl output:
   - sysctl: /tmp/phase1.sh: line 11: sysctl: command not found
     - Note: sysctl was not present in the runner environment; vm.swappiness change did not run. This is an unexpected failure for that specific command and is captured in the report.

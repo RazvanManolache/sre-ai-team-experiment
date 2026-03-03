@@ -1,7 +1,7 @@
-Artifact manifest — 2026-02-26T13:30:00Z
+Artifact manifest — 2026-02-26T13_30_00Z
 
 Files created/updated in this phase:
-- /app/docs/quorum_fencing_plan_2026-02-26T13:30:00Z.md
+- /app/docs/quorum_fencing_plan_2026-02-26T13_30_00Z.md
 - /app/docs/roles_and_secrets.md
 - /app/docs/acceptance_tests_and_rollbacks.md
 - /app/config/ansible_proxmox_hardening/play_qdevice_register.yml

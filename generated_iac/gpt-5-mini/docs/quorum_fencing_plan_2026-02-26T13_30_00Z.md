@@ -1,4 +1,4 @@
-Quorum & Fencing Plan — 2026-02-26T13:30:00Z
+Quorum & Fencing Plan — 2026-02-26T13_30_00Z
 
 Summary
 - Based on inventory, no BMC details were found. Preferred quorum approach: provision a QDevice/witness VM on a dedicated management VLAN. If BMC/IPMI access is provided later, STONITH playbooks are available as an alternative.

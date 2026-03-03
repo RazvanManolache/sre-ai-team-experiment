@@ -1,10 +1,10 @@
-Artifact manifest — 2026-02-26T12:50:00Z
+Artifact manifest — 2026-02-26T12_50_00Z
 
 Files created/updated in this run:
-- /app/docs/inventory_2026-02-26T12:35:02Z.md — Collected inventory (chmod 600)
-- /app/docs/inventory_analysis_2026-02-26T12:40:00Z.md — Inventory analysis
-- /app/docs/quorum_fencing_plan_2026-02-26T12:45:00Z.md — Quorum & fencing plan
-- /app/docs/quorum_fencing_plan_2026-02-26T13:30:00Z.md — Updated with security gating
+- /app/docs/inventory_2026-02-26T12_35_02Z.md — Collected inventory (chmod 600)
+- /app/docs/inventory_analysis_2026-02-26T12_40_00Z.md — Inventory analysis
+- /app/docs/quorum_fencing_plan_2026-02-26T12_45_00Z.md — Quorum & fencing plan
+- /app/docs/quorum_fencing_plan_2026-02-26T13_30_00Z.md — Updated with security gating
 - /app/docs/roles_and_secrets.md — Secrets and roles
 - /app/docs/acceptance_tests_and_rollbacks.md — Acceptance tests and rollback steps
 - /app/docs/implementation_plan.md — Updated plan with gating

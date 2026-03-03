@@ -1,4 +1,4 @@
-Preflight SSH check run: 2026-02-26T12:44:38Z
+Preflight SSH check run: 2026-02-26T12_44_38Z
 
 == 192.168.10.201 ==
 COMMAND: hostnamectl

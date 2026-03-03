@@ -493,7 +493,7 @@ Operational and safety best-practices
 - Avoid naive datetimes (no tzinfo) for persisted or exchanged timestamps — they lead to ambiguity across hosts/timezones.
 
 2. Prefer ISO 8601 format for interchange
-- Store and transmit timestamps as RFC3339/ISO 8601 strings (e.g., 2026-02-22T18:02:00Z) with explicit timezone designator.
+- Store and transmit timestamps as RFC3339/ISO 8601 strings (e.g., 2026-02-22T18_02_00Z) with explicit timezone designator.
 - Use standard parsing libraries on each side to avoid format mismatches.
 
 3. Source of truth: system clock discipline
@@ -1395,7 +1395,7 @@ Minimal actionable checklist you (the builder team) should apply now
 - Add a code lint or CI check that flags direct datetime.now() + strftime usage in production code.
 
 Suggested canonical formats (pick one and standardize)
-- Machine-readable with timezone: ISO-8601 (e.g., 2026-02-22T18:12:34Z or with subseconds 2026-02-22T18:12:34.123456Z).
+- Machine-readable with timezone: ISO-8601 (e.g., 2026-02-22T18_12_34Z or with subseconds 2026-02-22T18_12_34.123456Z).
 - Filename-safe compact UTC: YYYYMMDD_HHMMSSZ (e.g., 20260222_181234Z) — includes a trailing 'Z' to indicate UTC.
 Document which to use where (e.g., ISO-8601 in logs/metadata; compact UTC for filenames).
 

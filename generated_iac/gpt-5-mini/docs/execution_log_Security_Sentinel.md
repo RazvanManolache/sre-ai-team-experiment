@@ -1,5 +1,5 @@
 
-### [2026-02-26T12:19:26.040092] read_file — OK
+### [2026-02-26T12_19_26.040092] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -36,7 +36,7 @@ High-level Phases:
      - Record and verify BMC credentials are stored securely (use secrets manager) and that access is limited to ... [truncated]
 ```
 
-### [2026-02-26T12:21:30.858046] read_file — OK
+### [2026-02-26T12_21_30.858046] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -73,11 +73,11 @@ High-level Phases:
      - Record and verify BMC credentials are stored securely (use secrets manager) and that access is limited to ... [truncated]
 ```
 
-### [2026-02-26T12:35:31.190831] read_file — OK
-**Args:** `{"path": "/app/docs/inventory_2026-02-26T12:35:02Z.md"}`
+### [2026-02-26T12_35_31.190831] read_file — OK
+**Args:** `{"path": "/app/docs/inventory_2026-02-26T12_35_02Z.md"}`
 **Result:**
 ```
-=== NODE: 192.168.10.201 — 2026-02-26T12:35:02Z ===
+=== NODE: 192.168.10.201 — 2026-02-26T12_35_02Z ===
 \n--- CMD: hostnamectl ---
  Static hostname: proxmox1
        Icon name: computer-desktop
@@ -127,7 +127,7 @@ ff02::1 ip6-allnodes
 ff02::2 ip... [truncated]
 ```
 
-### [2026-02-26T12:35:57.897539] read_file — OK
+### [2026-02-26T12_35_57.897539] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -164,7 +164,7 @@ High-level Phases:
      - Record and verify BMC credentials are stored securely (use secrets manager) and that access is limited to ... [truncated]
 ```
 
-### [2026-02-26T12:38:27.379005] read_file — OK
+### [2026-02-26T12_38_27.379005] read_file — OK
 **Args:** `{"path": "/app/infra/terraform_witness/main.tf"}`
 **Result:**
 ```
@@ -200,14 +200,14 @@ resource "proxmox_vm_qemu" "qdevice" {
 
 ```
 
-### [2026-02-26T12:42:18.935502] read_file — OK
-**Args:** `{"path": "/app/docs/artifact_manifest_2026-02-26T13:30:00Z.md"}`
+### [2026-02-26T12_42_18.935502] read_file — OK
+**Args:** `{"path": "/app/docs/artifact_manifest_2026-02-26T13_30_00Z.md"}`
 **Result:**
 ```
-Artifact manifest — 2026-02-26T13:30:00Z
+Artifact manifest — 2026-02-26T13_30_00Z
 
 Files created/updated in this phase:
-- /app/docs/quorum_fencing_plan_2026-02-26T13:30:00Z.md
+- /app/docs/quorum_fencing_plan_2026-02-26T13_30_00Z.md
 - /app/docs/roles_and_secrets.md
 - /app/docs/acceptance_tests_and_rollbacks.md
 - /app/config/ansible_proxmox_hardening/play_qdevice_register.yml
@@ -216,11 +216,11 @@ Files created/updated in this phase:
 Next steps: @Security_Sentinel please re-review the updated quorum/fencing and hardening artifacts. Once you reply "APPROVED" I will instruct @DevOps_Builder to proceed with provisioning artifacts execution per the runbook.
 ```
 
-### [2026-02-26T12:43:22.585378] read_file — OK
-**Args:** `{"path": "/app/docs/quorum_fencing_plan_2026-02-26T13:30:00Z.md"}`
+### [2026-02-26T12_43_22.585378] read_file — OK
+**Args:** `{"path": "/app/docs/quorum_fencing_plan_2026-02-26T13_30_00Z.md"}`
 **Result:**
 ```
-Quorum & Fencing Plan — 2026-02-26T13:30:00Z
+Quorum & Fencing Plan — 2026-02-26T13_30_00Z
 
 Summary
 - Based on inventory, no BMC details were found. Preferred quorum approach: provision a QDevice/witness VM on a dedicated management VLAN. If BMC/IPMI access is provided later, STONITH playbooks are available as an alternative.
@@ -248,11 +248,11 @@ STONITH (if BMC present)
 - Playbook will install fence-agents and configure /etc/fence.d/ scripts. Requires BMC IP/user/credential in secrets manager. Includes idempotent verif... [truncated]
 ```
 
-### [2026-02-26T13:16:59.938931] read_file — OK
-**Args:** `{"path": "/app/docs/preflight_ssh_check_2026-02-26T12:44:38Z.md"}`
+### [2026-02-26T13_16_59.938931] read_file — OK
+**Args:** `{"path": "/app/docs/preflight_ssh_check_2026-02-26T12_44_38Z.md"}`
 **Result:**
 ```
-Preflight SSH check run: 2026-02-26T12:44:38Z
+Preflight SSH check run: 2026-02-26T12_44_38Z
 
 == 192.168.10.201 ==
 COMMAND: hostnamectl
@@ -300,7 +300,7 @@ Device "vmbr-mgmt" does not exist.
 
 ```
 
-### [2026-02-26T14:48:48.747850] read_file — OK
+### [2026-02-26T14_48_48.747850] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -308,7 +308,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -322,7 +322,7 @@ Note: This entry records the operator's explicit authorization to let the builde
 
 ```
 
-### [2026-02-26T14:48:50.804798] read_file — OK
+### [2026-02-26T14_48_50.804798] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -338,7 +338,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -347,19 +347,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T14:49:41.830856] read_file — OK
+### [2026-02-26T14_49_41.830856] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -367,7 +367,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -379,10 +379,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T14:50:53.551692] read_file — OK
+### [2026-02-26T14_50_53.551692] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -390,7 +390,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -402,10 +402,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T15:01:26.151299] read_file — OK
+### [2026-02-26T15_01_26.151299] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -413,7 +413,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -425,10 +425,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T15:01:30.326193] read_file — OK
+### [2026-02-26T15_01_30.326193] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -444,7 +444,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -453,19 +453,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T15:06:09.707179] read_file — OK
+### [2026-02-26T15_06_09.707179] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -473,7 +473,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -485,10 +485,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T15:06:15.584649] read_file — OK
+### [2026-02-26T15_06_15.584649] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -504,7 +504,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -513,19 +513,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T15:19:16.818735] read_file — OK
+### [2026-02-26T15_19_16.818735] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -533,7 +533,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -545,10 +545,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T15:19:22.963585] read_file — OK
+### [2026-02-26T15_19_22.963585] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -564,7 +564,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -573,19 +573,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T16:16:26.599516] read_file — OK
+### [2026-02-26T16_16_26.599516] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -593,7 +593,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -605,10 +605,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T17:46:08.328651] read_file — OK
+### [2026-02-26T17_46_08.328651] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -616,7 +616,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -628,10 +628,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T17:46:21.232661] read_file — OK
+### [2026-02-26T17_46_21.232661] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -647,7 +647,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -656,19 +656,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T17:47:32.404970] read_file — OK
+### [2026-02-26T17_47_32.404970] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -676,7 +676,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -688,10 +688,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T17:47:36.476278] read_file — OK
+### [2026-02-26T17_47_36.476278] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -707,7 +707,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -716,19 +716,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T17:48:21.655507] read_file — OK
+### [2026-02-26T17_48_21.655507] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -736,7 +736,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -748,10 +748,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T17:48:28.302444] read_file — OK
+### [2026-02-26T17_48_28.302444] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -767,7 +767,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -776,19 +776,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T17:49:02.227227] run_shell — OK
+### [2026-02-26T17_49_02.227227] run_shell — OK
 **Args:** `{"command": "ls -la /app || true"}`
 **Result:**
 ```
@@ -807,7 +807,7 @@ drwxr-xr-x  2 root root  4096 Feb 26 15:15 prompts
 
 ```
 
-### [2026-02-26T17:56:00.233227] read_file — OK
+### [2026-02-26T17_56_00.233227] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -815,7 +815,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -827,10 +827,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T17:56:10.167075] read_file — OK
+### [2026-02-26T17_56_10.167075] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -846,7 +846,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -855,19 +855,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T17:59:40.694606] read_file — OK
+### [2026-02-26T17_59_40.694606] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -875,7 +875,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -887,10 +887,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T17:59:45.003461] read_file — OK
+### [2026-02-26T17_59_45.003461] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -906,7 +906,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -915,19 +915,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:02:47.255708] read_file — OK
+### [2026-02-26T18_02_47.255708] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -935,7 +935,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -947,10 +947,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:02:51.016631] read_file — OK
+### [2026-02-26T18_02_51.016631] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -966,7 +966,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -975,19 +975,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:03:12.516278] read_file — OK
+### [2026-02-26T18_03_12.516278] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -995,7 +995,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -1007,10 +1007,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:03:24.420301] read_file — OK
+### [2026-02-26T18_03_24.420301] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -1018,7 +1018,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -1030,10 +1030,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:03:29.379732] read_file — OK
+### [2026-02-26T18_03_29.379732] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -1049,7 +1049,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -1058,19 +1058,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:05:33.213545] read_file — OK
+### [2026-02-26T18_05_33.213545] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -1078,7 +1078,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -1090,10 +1090,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:05:47.219027] read_file — OK
+### [2026-02-26T18_05_47.219027] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -1109,7 +1109,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -1118,19 +1118,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:06:32.601860] read_file — OK
+### [2026-02-26T18_06_32.601860] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -1138,7 +1138,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -1150,10 +1150,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:06:50.000839] read_file — OK
+### [2026-02-26T18_06_50.000839] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -1169,7 +1169,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -1178,19 +1178,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:09:44.066416] read_file — OK
+### [2026-02-26T18_09_44.066416] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -1198,7 +1198,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -1210,10 +1210,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:09:47.800748] read_file — OK
+### [2026-02-26T18_09_47.800748] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -1229,7 +1229,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -1238,19 +1238,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:10:40.011016] read_file — OK
+### [2026-02-26T18_10_40.011016] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -1258,7 +1258,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -1270,10 +1270,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:10:44.750338] read_file — OK
+### [2026-02-26T18_10_44.750338] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -1289,7 +1289,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -1298,19 +1298,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:11:36.658252] read_file — OK
+### [2026-02-26T18_11_36.658252] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -1318,7 +1318,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -1330,10 +1330,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:11:40.211233] read_file — OK
+### [2026-02-26T18_11_40.211233] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -1349,7 +1349,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -1358,19 +1358,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:11:46.092840] run_shell — OK
+### [2026-02-26T18_11_46.092840] run_shell — OK
 **Args:** `{"command": "ls -la /app/config || true"}`
 **Result:**
 ```
@@ -1383,7 +1383,7 @@ drwxr-xr-x 12 root root  384 Feb 26 13:57 ansible_proxmox_hardening
 
 ```
 
-### [2026-02-26T18:12:01.551413] read_file — OK
+### [2026-02-26T18_12_01.551413] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -1391,7 +1391,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -1403,10 +1403,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:12:05.721787] read_file — OK
+### [2026-02-26T18_12_05.721787] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -1422,7 +1422,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -1431,19 +1431,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:12:19.356889] read_file — OK
+### [2026-02-26T18_12_19.356889] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -1451,7 +1451,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -1463,10 +1463,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:12:25.237559] read_file — OK
+### [2026-02-26T18_12_25.237559] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -1482,7 +1482,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -1491,19 +1491,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:12:59.297152] read_file — OK
+### [2026-02-26T18_12_59.297152] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -1511,7 +1511,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -1523,10 +1523,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:13:03.096028] read_file — OK
+### [2026-02-26T18_13_03.096028] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -1542,7 +1542,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -1551,19 +1551,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:16:13.093068] read_file — OK
+### [2026-02-26T18_16_13.093068] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -1571,7 +1571,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -1583,10 +1583,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:16:50.729353] read_file — OK
+### [2026-02-26T18_16_50.729353] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -1594,7 +1594,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -1606,10 +1606,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:17:31.281584] read_file — OK
+### [2026-02-26T18_17_31.281584] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -1617,7 +1617,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -1629,10 +1629,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:17:36.033142] read_file — OK
+### [2026-02-26T18_17_36.033142] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -1648,7 +1648,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -1657,19 +1657,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:21:12.364700] read_file — OK
+### [2026-02-26T18_21_12.364700] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -1677,7 +1677,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -1689,10 +1689,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:22:08.734468] read_file — OK
+### [2026-02-26T18_22_08.734468] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -1700,7 +1700,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -1712,10 +1712,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:22:33.174180] read_file — OK
+### [2026-02-26T18_22_33.174180] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -1731,7 +1731,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -1740,19 +1740,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:23:48.543597] read_file — OK
+### [2026-02-26T18_23_48.543597] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -1760,7 +1760,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -1772,10 +1772,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:24:50.302525] read_file — OK
+### [2026-02-26T18_24_50.302525] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -1783,7 +1783,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -1795,10 +1795,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:25:10.356124] read_file — OK
+### [2026-02-26T18_25_10.356124] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -1806,7 +1806,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -1818,10 +1818,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:25:15.204904] read_file — OK
+### [2026-02-26T18_25_15.204904] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -1837,7 +1837,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -1846,19 +1846,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:25:59.899086] read_file — OK
+### [2026-02-26T18_25_59.899086] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -1866,7 +1866,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -1878,10 +1878,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:26:04.989454] read_file — OK
+### [2026-02-26T18_26_04.989454] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -1897,7 +1897,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -1906,19 +1906,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:26:41.681625] read_file — OK
+### [2026-02-26T18_26_41.681625] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -1926,7 +1926,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -1938,10 +1938,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:32:05.159130] read_file — OK
+### [2026-02-26T18_32_05.159130] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -1949,7 +1949,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -1961,10 +1961,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:35:58.550543] read_file — OK
+### [2026-02-26T18_35_58.550543] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -1972,7 +1972,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -1984,10 +1984,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:36:04.412531] read_file — OK
+### [2026-02-26T18_36_04.412531] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -2003,7 +2003,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -2012,19 +2012,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:36:30.423075] read_file — OK
+### [2026-02-26T18_36_30.423075] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -2032,7 +2032,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -2044,10 +2044,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:36:33.766117] read_file — OK
+### [2026-02-26T18_36_33.766117] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -2063,7 +2063,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -2072,19 +2072,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:37:00.039635] read_file — OK
+### [2026-02-26T18_37_00.039635] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -2092,7 +2092,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -2104,10 +2104,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:37:02.176669] read_file — OK
+### [2026-02-26T18_37_02.176669] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -2123,7 +2123,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -2132,19 +2132,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:37:47.014940] read_file — OK
+### [2026-02-26T18_37_47.014940] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -2152,7 +2152,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -2164,10 +2164,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:38:02.651624] read_file — OK
+### [2026-02-26T18_38_02.651624] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -2183,7 +2183,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -2192,19 +2192,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:38:07.387926] read_file — OK
+### [2026-02-26T18_38_07.387926] read_file — OK
 **Args:** `{"path": "/app/config/ansible_proxmox_hardening/tasks/firewall.yml"}`
 **Result:**
 ```
@@ -2258,7 +2258,7 @@ Action items for Architect_Zero:
 
 ```
 
-### [2026-02-26T18:50:07.677393] read_file — OK
+### [2026-02-26T18_50_07.677393] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -2266,7 +2266,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -2278,10 +2278,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:50:22.046834] read_file — OK
+### [2026-02-26T18_50_22.046834] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -2297,7 +2297,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -2306,19 +2306,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:50:53.757008] read_file — OK
+### [2026-02-26T18_50_53.757008] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -2326,7 +2326,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -2338,10 +2338,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:50:56.044777] read_file — OK
+### [2026-02-26T18_50_56.044777] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -2357,7 +2357,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -2366,19 +2366,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:51:22.911280] read_file — OK
+### [2026-02-26T18_51_22.911280] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -2386,7 +2386,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -2398,10 +2398,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:51:27.083930] read_file — OK
+### [2026-02-26T18_51_27.083930] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -2417,7 +2417,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -2426,19 +2426,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:52:06.920528] read_file — OK
+### [2026-02-26T18_52_06.920528] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -2446,7 +2446,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -2458,10 +2458,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:52:19.362521] read_file — OK
+### [2026-02-26T18_52_19.362521] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -2477,7 +2477,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -2486,19 +2486,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:52:46.339828] read_file — OK
+### [2026-02-26T18_52_46.339828] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -2506,7 +2506,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -2518,10 +2518,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:53:41.285361] read_file — OK
+### [2026-02-26T18_53_41.285361] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -2529,7 +2529,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -2541,10 +2541,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:53:44.545913] read_file — OK
+### [2026-02-26T18_53_44.545913] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -2560,7 +2560,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -2569,19 +2569,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:54:11.162532] read_file — OK
+### [2026-02-26T18_54_11.162532] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -2589,7 +2589,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -2601,10 +2601,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:54:59.131148] read_file — OK
+### [2026-02-26T18_54_59.131148] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -2612,7 +2612,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -2624,10 +2624,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:55:45.735570] read_file — OK
+### [2026-02-26T18_55_45.735570] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -2635,7 +2635,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -2647,10 +2647,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:55:56.736921] read_file — OK
+### [2026-02-26T18_55_56.736921] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -2666,7 +2666,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -2675,19 +2675,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:56:48.603349] read_file — OK
+### [2026-02-26T18_56_48.603349] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -2695,7 +2695,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -2707,10 +2707,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:57:02.567897] read_file — OK
+### [2026-02-26T18_57_02.567897] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -2726,7 +2726,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -2735,19 +2735,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:57:53.575212] read_file — OK
+### [2026-02-26T18_57_53.575212] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -2755,7 +2755,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -2767,10 +2767,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:58:32.798537] read_file — OK
+### [2026-02-26T18_58_32.798537] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -2778,7 +2778,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -2790,10 +2790,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T18:58:46.022365] read_file — OK
+### [2026-02-26T18_58_46.022365] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -2809,7 +2809,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -2818,19 +2818,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T18:59:37.005682] read_file — OK
+### [2026-02-26T18_59_37.005682] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -2838,7 +2838,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -2850,10 +2850,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T19:00:16.873398] read_file — OK
+### [2026-02-26T19_00_16.873398] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -2861,7 +2861,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -2873,10 +2873,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T19:01:18.710212] read_file — OK
+### [2026-02-26T19_01_18.710212] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -2884,7 +2884,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -2896,10 +2896,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T19:01:23.024685] read_file — OK
+### [2026-02-26T19_01_23.024685] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -2915,7 +2915,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -2924,19 +2924,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T19:01:40.099536] read_file — OK
+### [2026-02-26T19_01_40.099536] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -2944,7 +2944,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -2956,10 +2956,10 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```
 
-### [2026-02-26T19:01:45.228800] read_file — OK
+### [2026-02-26T19_01_45.228800] read_file — OK
 **Args:** `{"path": "/app/docs/user_requirements.md"}`
 **Result:**
 ```
@@ -2975,7 +2975,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -2984,19 +2984,19 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
     - Cannot rely on switch/VLAN ... [truncated]
 ```
 
-### [2026-02-26T19:02:42.196948] read_file — OK
+### [2026-02-26T19_02_42.196948] read_file — OK
 **Args:** `{"path": "/app/docs/implementation_plan.md"}`
 **Result:**
 ```
@@ -3004,7 +3004,7 @@ Implementation Plan Log
 
 - Existing Plan entries preserved above.
 
-- Entry: 2026-02-26T14:20:00Z — Operator Authorization for Automated Remediation
+- Entry: 2026-02-26T14_20_00Z — Operator Authorization for Automated Remediation
   - User: Provided explicit instruction to FIX_AND_RETRY_COMPENSATIONS_CONTINUE and authorized the builder to run compensating hardening tasks and follow-up retries without further permission prompts.
   - Action: Per the operator instruction, the builder team is authorized to:
     - Fix the Ansible templating issues in /app/config/ansible_proxmox_hardening/* (convert raw Jinja into safe Ansible loops or Jinja2 templates rendered via template module).
@@ -3016,5 +3016,5 @@ Implementation Plan Log
 
 Note: This entry records the operator's explicit authorization to let the builder fix and retry compensations without further prompts. The builder team must still obey all safety gates defined elsewhere in the runbook and stop on the first destructive or HA-related action.
 
-- Entry: 2026-02-26T17:05:00Z — Security_Sentinel APPROVED local validation a... [truncated]
+- Entry: 2026-02-26T17_05_00Z — Security_Sentinel APPROVED local validation a... [truncated]
 ```

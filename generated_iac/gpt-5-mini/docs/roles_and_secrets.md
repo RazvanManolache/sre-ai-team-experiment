@@ -1,4 +1,4 @@
-Roles and Secrets — 2026-02-26T13:30:00Z
+Roles and Secrets — 2026-02-26T13_30_00Z
 
 Required service accounts and secrets (must be provisioned in secrets manager before running IaC/Ansible):
 
