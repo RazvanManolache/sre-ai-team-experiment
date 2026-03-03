@@ -1,4 +1,4 @@
-Ansible run output for firewall apply (2026-02-26T17:33:20Z)
+Ansible run output for firewall apply (2026-02-26T17_33_20Z)
 
 [Full output captured to /tmp/firewall_apply_run.txt during execution]
 
@@ -9,4 +9,4 @@ Errors encountered during validation on targets:
              ^
 ... (truncated) see /tmp/firewall_apply_run.txt for full details
 
-Saved at /app/docs/firewall_apply_run_2026-02-26T17:33:20Z.md
+Saved at /app/docs/firewall_apply_run_2026-02-26T17_33_20Z.md

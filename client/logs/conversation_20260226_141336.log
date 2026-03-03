@@ -306,7 +306,7 @@ Notes for the builder team:
 When the inventory file is available, Architect_Zero will analyze and produce the exact execution steps (playbooks/commands) for quorum, storage, networking, HA, and Kubernetes bootstrap.
 
 Append log:
-- 2026-02-26T00:00:00Z: Security_Sentinel APPROVED; inventory collection authorized and instructions appended.
+- 2026-02-26T00_00_00Z: Security_Sentinel APPROVED; inventory collection authorized and instructions appended.
 ----------------------------------------------
 
 I have confirmed the file exists and provided its full contents above for your review.
@@ -329,7 +329,7 @@ Tags: @Security_Sentinel @Architect_Zero
 
 1) Run as root on each Proxmox node (or from a management host with SSH access) and collect stdout+stderr for every command below. Consolidate outputs from both nodes into a single file located at:
 /app/docs/inventory_<timestamp>.md
-Replace <timestamp> with an ISO 8601 datetime (e.g., 2026-02-26T15:04:05Z).
+Replace <timestamp> with an ISO 8601 datetime (e.g., 2026-02-26T15_04_05Z).
 
 2) Commands to run (in this order). If a command fails, capture stderr and include it inline in the saved file.
 

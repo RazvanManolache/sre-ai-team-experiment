@@ -343,7 +343,7 @@ File saved successfully: infra/rotation-evidence.json
 File saved successfully: infra/rewrite-notice.txt
 ```
 [DevOps_Builder::think]: 💭 Thinking step 29/100...
-[DevOps_Builder::think]: 🔧 Calling tool: save_file({"path": "infra/runbook.md", "content": "Operator runbook entry (sanitized)\nOperator: builder-team-bot\nTimestamp: 2026-02-23T08:45:00Z\nCommands run (examples):\n  ls -la\n  cat terraform.tfstate\n )
+[DevOps_Builder::think]: 🔧 Calling tool: save_file({"path": "infra/runbook.md", "content": "Operator runbook entry (sanitized)\nOperator: builder-team-bot\nTimestamp: 2026-02-23T08_45_00Z\nCommands run (examples):\n  ls -la\n  cat terraform.tfstate\n )
 [DevOps_Builder]: Tool Result (save_file):
 ```
 File saved successfully: infra/runbook.md

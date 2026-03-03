@@ -1,4 +1,4 @@
-Second attempt to apply firewall template produced an nft load error due to malformed rendered file. Collected output saved from Ansible run at 2026-02-26T13:24:30Z.
+Second attempt to apply firewall template produced an nft load error due to malformed rendered file. Collected output saved from Ansible run at 2026-02-26T13_24_30Z.
 
 See /app/config/ansible_proxmox_hardening/templates/50-proxmox-mgmt.nft.j2 for the template used. The template rendering produced invalid nft syntax because admin_allowed_ips list items weren't quoted and the join formatting placed brackets incorrectly.
 

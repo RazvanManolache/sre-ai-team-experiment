@@ -1,5 +1,5 @@
 Execution Instructions — Compensating Hardening Fix & Retry
-Timestamp: 2026-02-26T13:40:00Z UTC
+Timestamp: 2026-02-26T13_40_00Z UTC
 Author: Architect_Zero
 
 Context:

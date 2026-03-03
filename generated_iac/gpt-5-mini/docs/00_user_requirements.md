@@ -10,7 +10,7 @@ Action items for Architect_Zero:
 - Collect missing details where necessary when required by plan phases, but proceed to create an implementation plan based on a common minimal production-ready setup for a 2-node Proxmox VE 9 cluster.
 
 - Entry 2:
-  - Timestamp: 2026-02-26T00:00:00Z
+  - Timestamp: 2026-02-26T00_00_00Z
   - User: Provided IPs
   - Description: User supplied Proxmox node addresses for inventory collection.
   - Node addresses:
@@ -19,12 +19,12 @@ Action items for Architect_Zero:
   - Notes: These IPs are to be used by the builder team to SSH and run the inventory/state collection commands. Inventory output must be consolidated into /app/docs/inventory_<ISO-8601-timestamp>.md with restrictive permissions and then reported back to Architect_Zero.
 
 - Entry 3:
-  - Timestamp: 2026-02-26T13:00:00Z
+  - Timestamp: 2026-02-26T13_00_00Z
   - User instruction: "always run terraform in your local container, not on the remote servers trough ssh."
   - Notes: Architect_Zero and the builder team must ensure Terraform commands (init/plan/apply) are executed from the builder's local/container environment where provider plugins can be installed and network access to provider registries exists. Terraform must never be executed by remote SSH on the Proxmox nodes. This instruction is appended to the requirements and will be enforced in the execution runbook and README files for /app/infra and /app/config.
 
 - Entry 4:
-  - Timestamp: 2026-02-26T13:05:00Z
+  - Timestamp: 2026-02-26T13_05_00Z
   - User: Provided environment note
   - Description: The Proxmox nodes are connected to a TP-Link AC2300 MU-MIMO Wi-Fi Router directly. The router does not support VLANs, and so creating a dedicated management VLAN on the physical network is not possible with current hardware.
   - Implications:
@@ -46,33 +46,33 @@ Action items for Architect_Zero:
   - Note: Choose one option above so the builder team can proceed. If you choose a temporary software mitigation or accept the risk, Security_Sentinel will need to explicitly acknowledge/approve the compensating controls. If you choose PROVIDE_MANAGED_SWITCH, we will wait for you to confirm when hardware is in place and then proceed.
 
 - Entry 5:
-  - Timestamp: 2026-02-26T13:50:00Z
+  - Timestamp: 2026-02-26T13_50_00Z
   - User decision: ACCEPT_RISK_FLAT_NETWORK
   - Notes: User accepted operating Proxmox with management and workload traffic on a single flat network (vmbr0). Compensating controls to be implemented: host firewall hardening, bootstrap-key removal/rotation, tight admin IP ACLs, secrets management, monitoring and alerting. Security_Sentinel must re-approve compensating controls before any HA enablement.
 
 - Entry 6:
-  - Timestamp: 2026-02-26T14:10:00Z
+  - Timestamp: 2026-02-26T14_10_00Z
   - User input: ADMIN_JUMP_HOST_IPS: 192.168.10.211; NO_WIREGUARD
   - Notes: User provided admin jump host IP and declined WireGuard. Use this IP in firewall playbooks to allow management ports only from this host. Playbooks will be prepared and run only after the user authorizes execution or chooses to run them locally.
 
 - Entry 7:
-  - Timestamp: 2026-02-26T14:30:00Z
+  - Timestamp: 2026-02-26T14_30_00Z
   - User action: ADMIN_JUMP_HOST_IPS updated
   - Description: User corrected ADMIN_JUMP_HOST_IPS to include two IPs.
   - ADMIN_JUMP_HOST_IPS: 192.168.10.211, 192.168.10.10; NO_WIREGUARD
 
 - Entry 8:
-  - Timestamp: 2026-02-26T14:40:00Z
+  - Timestamp: 2026-02-26T14_40_00Z
   - User OOB plan provided: "OOB_PLAN: local on-site keyboard/monitor access available for both hosts"
   - Notes: Operator confirmed local physical console access for emergency rollback if firewall rules block management traffic.
-2026-02-26T16:58:00Z - USER action: nftables installed in builder environment. Operator authorized builder to locally validate rendered nft ruleset and proceed with safe apply after Security_Sentinel review. (Recorded by Architect_Zero)
+2026-02-26T16_58_00Z - USER action: nftables installed in builder environment. Operator authorized builder to locally validate rendered nft ruleset and proceed with safe apply after Security_Sentinel review. (Recorded by Architect_Zero)
 
-- 2026-02-26T17:55:00Z - User instruction: Use escaped double quotes in the IP nodes list.
+- 2026-02-26T17_55_00Z - User instruction: Use escaped double quotes in the IP nodes list.
   - Details: The operator requests that when passing IP lists into Ansible/templating/extra-vars the IP addresses be represented with escaped double quotes (e.g., proxmox_node_ips=[\"192.168.10.201\",\"192.168.10.202\"]) to ensure they are interpreted as lists of strings and to avoid Jinja/Ansible treating them as single quoted strings that iterate as characters on-target.
   - Rationale: Prevents template rendering from iterating over string characters on-target and producing malformed nft lines; aligns variable passing between controller-local render and on-target copy.
   - Action: Builder must ensure extra-vars and playbook variable handling use escaped double quotes when invoked from shell contexts or where quoting could be lost.
 
-- Entry: 2026-02-26T19:10:00Z — Operator token: PROCEED_WITH_ESCAPED_QUOTE_RUN
+- Entry: 2026-02-26T19_10_00Z — Operator token: PROCEED_WITH_ESCAPED_QUOTE_RUN
   - Actor: Operator
   - Action: Per operator instruction, proceed to re-run the controller-render + privileged validation and, on successful validation, execute the safe apply sequence using escaped double-quoted array extra-vars in all ansible invocations. The builder is authorized to run the sequence now, stop on first failure, and save all artifacts to /app/docs with chmod 600.
   - Required invocation example to use (exact):
@@ -90,5 +90,5 @@ Action items for Architect_Zero:
   - Failure handling: On first failure save full stdout/stderr to /app/docs/issue_report_compensations_<TS>.md (chmod 600) and STOP. Report only file paths back to Architect_Zero.
   - Reviewer: @Security_Sentinel (will be tagged after artifacts are uploaded)
   - Notes: This entry enforces the escaped double-quote extra-vars convention and documents operator authorization to proceed under that convention.
-- Entry: 2026-02-26T20:50:00Z - Operator request: RUN_VERIFICATION_SUMMARY
+- Entry: 2026-02-26T20_50_00Z - Operator request: RUN_VERIFICATION_SUMMARY
   - The operator requested a verification summary run to collect per-node nft lists, pvecm/corosync status, ss outputs, https probes from admin and workload perspectives, and proof that bootstrap key was removed from /root/.ssh/authorized_keys. The Architect_Zero coordinated this and instructed @DevOps_Builder to execute. Artifacts must be saved under /app/docs with chmod 600.
